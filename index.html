@@ -1,12 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Piyush_Portfolio</title>
+  <link rel="stylesheet" href="./styles/bootstrap.css" />
+  <link rel="stylesheet" href="./dist/github-calendar-responsive.css">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Miss+Saint+Delafield" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- <link rel="stylesheet" href="./dist/github-calendar.css"> -->
+  <link rel="stylesheet" href="./styles/index.css" />
 </head>
-<body>
-    <h1>Piyush Portfolio ...... rrr</h1>
-</body>
+<body">
+  <div id="navbar">
+    <div class="logo"><i class="fa-light fa-less-than"> </i> Piyush Kumar /<i class="fa-light fa-greater-than"> </i>
+    </div>
+    <div class="navItems">
+      <div><a href="#header">Home</a></div>
+      <div><a href="#aboutMe">About</a></div>
+      <div><a href="#skills">Skills</a></div>
+      <div><a href="#projects">Projects</a></div>
+      <div><a href="#contact">Contact</a></div>
+      <div class="btn">
+        <a href="./data/Sumit_Raghav_Resume.pdf" download>Resume <i class="fa-solid fa-download"></i></a>
+      </div>
+    </div>
+    <div id="burger_menu" onclick="openmenu()">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+  </div>
+
+  <div id="burger_items" class="navItems2">
+    <div><i class="fa-solid fa-xmark" onclick="openmenu()"></i></div>
+    <div><a href="#header">Home</a></div>
+    <div><a href="#aboutMe">About</a></div>
+    <div><a href="#skills">Skills</a></div>
+    <div><a href="#projects">Projects</a></div>
+    <div><a href="#contact">Contact</a></div>
+  </div>
+
+  <div id="header">
+    <h1 class="heading">Hi, I am Piyush Kumar</h1>
+    <h2 id="java-typing"></h2>
+    <h3>
+      Good understanding of programming concepts in both Frontend & Backend
+      Technologies and training in Java Backend and Frontend Development.
+      Enthusiastic and eager to contribute to the team through hard work. I am
+      motivated to learn and grow in Tech Industry.
+    </h3>
+    <div class="contact-links">
+      <div>
+        <a href="https://github.com/sumitraghavwork" target="_blank">
+          <img class="h40 hov" src="./data/github.png" alt="" />
+        </a>
+      </div>
+      <div>
+        <a href="mailto:sumitraghavwork@gmail.com" target="_blank">
+          <img class="h40 hov" src="./data/mail.png" alt="" />
+        </a>
+      </div>
+      <div>
+        <a href="http://www.linkedin.com/in/sumit-raghav-work" target="_blank">
+          <img class="h40 hov" src="./data/linkedin.png" alt="" />
+        </a>
+      </div>
+      <div>
+        <a href="./data/Sumit_Raghav_Resume.pdf" download>
+          <img class="h40 hov" src="./data/resumepng.png" alt="" />
+        </a>
+      </div>
+      <div>
+        <a href="https://leetcode.com/sumitraghavwork/" target="_blank">
+          <img class="h40 hov" src="./data/leetcode1.png" alt="" />
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div id="aboutMe">
+    <h1 class="heading">About Me</h1>
+    <div class="aboutMe-container">
+      <div>
+        <img class="w100 br20" src="./data/pic.jpg" alt="" />
+      </div>
+      <div>
+        <!-- <h1 class="mab20">About Me</h1> -->
+        <h3>
+          Hi , I am Piyush Kumar from Patna, Bihar. A dedicated Java
+          Backend developer with a specialized skill set. Proficient in data
+          structures and algorithms to build robust web applications.
+          Self-motivated and adaptable to both back-end and front-end whose
+          mission in life is to build useful products for solving everyday
+          problems.
+        </h3>
+        <br />
+        <h3>Some of my interests apart form Coding :</h3>
+        <h3>Chess</h3>
+        <h3>Table Tennis</h3>
+        <h3>World Affairs</h3>
+        <div class="about_btn">
+          <a href="./data/Sumit_Raghav_Resume.pdf" download>Resume <i class="fa-solid fa-download"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="myTimeline">
+    <!-- <h1 class="heading">My TimeLine</h1> -->
+  </div>
+
+
+
+  <div id="skills">
+    <h1 class="heading">Skills</h1>
+    <div id="skills-container">
+      <!-- add skills here -->
+    </div>
+  </div>
+
+  <div id="myStatistics">
+    <h1 class="heading">My Statistics</h1>
+    <div>
+      <img src="./data/statistics.png" alt=""></div>
+    <div>
+      <div>
+        <img src="https://github-readme-stats.vercel.app/api/top-langs?username=sumitraghavwork&show_icons=true&locale=en&layout=compact" alt="sumitraghavwork" />
+      </div>
+      <div>
+        <!-- &nbsp; -->
+        <img src="https://github-readme-stats.vercel.app/api?username=sumitraghavwork&show_icons=true&locale=en" alt="sumitraghavwork" />
+      </div>
+
+      <div>
+        <img src="https://github-readme-streak-stats.herokuapp.com/?user=sumitraghavwork&" alt="sumitraghavwork" />
+      </div>
+    </div>
+   
+  </div>
+
+  <div id="githubBoard">
+    <h1 class="heading">Github Contributions</h1>
+    <div class="calendar">
+      <!-- Loading stuff -->
+      <!-- Loading the data just for you. -->
+    </div>
+  </div>
+
+  <div id="projects">
+    <h1 class="heading">Projects</h1>
+    <div id="projects-container">
+      <!-- add projects here -->
+    </div>
+  </div>
+
+  <div id="contact">
+    <h1 class="heading">Contact</h1>
+    <div>
+      <div id="contact-icons">
+        <div>
+          <a href="https://github.com/Piyushfromit">
+            <img class="hov" src="./data/github.png" alt="" />
+            <p>github.com/Piyushfromit</p>
+          </a>
+        </div>
+        <div>
+          <a href="mailto:piyushfrommasai@gmail.com">
+            <img class="hov" src="./data/mail.png" alt="" />
+            <p>piyushfrommasai@gmail.com</p>
+          </a>
+        </div>
+        <div>
+          <a href="http://www.linkedin.com/in/sumit-raghav-work">
+            <img class="hov" src="./data/linkedin.png" alt="" />
+            <p>in/Piyush Kumar-work</p>
+          </a>
+        </div>
+        <div>
+          <a href="https://leetcode.com/sumitraghavwork/">
+            <img class="hov" src="./data/leetcode1.png" alt="" />
+            <p>leetcode.com/sumitraghavwork</p>
+          </a>
+        </div>
+      </div>
+      <div id="google-sheet">
+        <!-- <h1 class="tac">Fill the Form to Contact Me</h1> -->
+        <form name="submit-to-google-sheet">
+          <input type="text" name="Name" placeholder="Your Name" required />
+          <input type="email" name="Email" placeholder=" Your Email" required />
+          <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+          <button type="submit" class="submitbtn">Submit</button>
+        </form>
+        <span id="msg"></span>
+      </div>
+    </div>
+  </div>
+
+  <div id="copyright">
+    <h2>Made with <span>❤</span> By <span>Piyush Kumar</span> </h2>
+  </div>
+  </body>
+
 </html>
+<script src="./scripts/index.js"></script>
+<script src="./scripts/typingeffect.js"></script>
+<script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
+<script>
+  GitHubCalendar(".calendar", "sumitraghavwork", { responsive: true });
+</script>
