@@ -169,8 +169,8 @@ let projects = [
     name: 'BookMyBus SpringBoot Application',
     desc:
       "An end-to-end bus reservation system. It handles user authentication, create bus, route, book reservations, provide feedback.",
-    live: 'https://drive.google.com/file/d/1z8W2wPKOp8Avx32rJu1jWigyjyMxW-F5/view?usp=sharing',
-    github: 'https://github.com/sumitraghavwork/habitual-flag-8718',
+    live: 'https://drive.google.com/file/d/1AY7rmxxM6qQD9Gr0sR4ojEzUgRdxFBVU/view',
+    github: 'https://github.com/PratyayChakraborty/holy-food-9262',
     techstack: ['SpringBoot', 'AWS', 'Hibernate'],
     group: 'true',
     solo: 'false',
