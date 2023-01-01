@@ -2,8 +2,9 @@ html {
   scroll-behavior: smooth;
 }
 #prodiv{
-  color: blue;
-  text-decoration: underline;
+  color:rgb(81, 81, 244);
+  font-size: 40px;
+  
 }
 .heading {
   font-size: 35px;
@@ -380,6 +381,11 @@ html {
   }
   #navbar > div:nth-child(2) {
     display: none;
+  }
+  #prodiv{
+    color:rgb(81, 81, 244);
+    font-size: 25px;
+    /* text-decoration: underline; */
   }
   .heading {
     font-size: 25px;

@@ -1,5 +1,5 @@
-const scriptURL =
-  'https://script.google.com/macros/s/AKfycbwElebV2ONtMTMvS2DiiEJxyFom5W5hXLc0R-bCNx6vCM1EFCP5CL8hc9Bn75mZa5S8/exec'
+// just uncomment line no... 1 for active Massage section of Portfolio
+// const scriptURL ='https://script.google.com/macros/s/AKfycbwElebV2ONtMTMvS2DiiEJxyFom5W5hXLc0R-bCNx6vCM1EFCP5CL8hc9Bn75mZa5S8/exec'
 const form = document.forms['submit-to-google-sheet']
 const msg = document.getElementById('msg')
 form.addEventListener('submit', (e) => {
