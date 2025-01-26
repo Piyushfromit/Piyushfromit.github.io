@@ -1,0 +1,199 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: 'poppins', sans-serif;
+  /* font-family: 'work-sans'; */
+}
+.submitbtn{
+  font-size: 16px;
+   border: none;
+  border-radius: 10px;
+  padding: 8px 18px;
+  background-color: rgb(235, 14, 14);
+  cursor: pointer;
+  margin: 10px;
+}
+.btn{
+  border: 1px solid rgb(59, 241, 52);
+  border-radius: 15px;
+  padding: 5px 10px;
+  background-color: rgb(116, 229, 116);
+  cursor: pointer;
+  /* margin: 10px; */
+}
+.hov:hover{
+  transform: scale(1.05);
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.vh80 {
+  height: 80vh;
+}
+.vh100 {
+  height: 100vh;
+}
+
+.fdc {
+  flex-direction: column;
+}
+.fs60 {
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.fs20 {
+  font-size: 20px;
+  font-weight: bold;
+}
+.cp {
+  cursor: pointer;
+}
+.tac {
+  text-align: center;
+}
+.bd {
+  border: 1px solid red;
+}
+.ar {
+  aspect-ratio: 1;
+}
+.db {
+  display: block;
+}
+
+.df {
+  display: flex;
+}
+.aifs {
+  align-items: flex-start;
+}
+.aic {
+  align-items: center;
+}
+.jcsa {
+  justify-content: space-around;
+}
+
+.jcse {
+  justify-content: space-evenly;
+}
+
+.jcsb {
+  justify-content: space-between;
+}
+
+.ma {
+  margin: auto;
+}
+
+.mat10 {
+  margin-top: 10px;
+}
+.mat20 {
+  margin-top: 20px;
+}
+.mat30 {
+  margin-top: 30px;
+}
+.mat40 {
+  margin-top: 40px;
+}
+.mat50 {
+  margin-top: 50px;
+}
+.mat60 {
+  margin-top: 60px;
+}
+.mat70 {
+  margin-top: 70px;
+}
+.mat80 {
+  margin-top: 80px;
+}
+
+.mab10 {
+  margin-bottom: 10px;
+}
+.mab20 {
+  margin-bottom: 20px;
+}
+.mab30 {
+  margin-bottom: 30px;
+}
+.mab40 {
+  margin-bottom: 40px;
+}
+.mab50 {
+  margin-bottom: 50px;
+}
+.mab60 {
+  margin-bottom: 60px;
+}
+.mab70 {
+  margin-bottom: 70px;
+}
+.mab80 {
+  margin-bottom: 80px;
+}
+
+.ma10 {
+  margin: 10px;
+}
+
+.w10 {
+  width: 10%;
+}
+.w20 {
+  width: 20%;
+}
+.w30 {
+  width: 30%;
+}
+.w40 {
+  width: 40%;
+}
+.w50 {
+  width: 50%;
+}
+.w60 {
+  width: 60%;
+}
+.w70 {
+  width: 70%;
+}
+.w80 {
+  width: 80%;
+}
+.w90 {
+  width: 90%;
+}
+.w100 {
+  width: 100%;
+}
+.h10 {
+  height: 10px;
+}
+.h20 {
+  height: 20px;
+}
+.h30 {
+  height: 30px;
+}
+.h40 {
+  height: 40px;
+}
+.h50 {
+  height: 50px;
+}
+
+.br20 {
+  border-radius: 20px;
+}
