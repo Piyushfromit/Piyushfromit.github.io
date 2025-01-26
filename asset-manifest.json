@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d0154a09.css",
+    "main.js": "/static/js/main.e02d4141.js",
+    "static/js/787.7da95b79.chunk.js": "/static/js/787.7da95b79.chunk.js",
+    "static/media/mypic.jpg": "/static/media/mypic.cdf4ee7c7ce7c2b97643.jpg",
+    "static/media/aboutgif.gif": "/static/media/aboutgif.a50a087d3e8aad894f33.gif",
+    "static/media/mealdb.PNG": "/static/media/mealdb.92797660534772cf2281.PNG",
+    "static/media/licious.PNG": "/static/media/licious.7f0b5e74d14f235d84e1.PNG",
+    "static/media/Tripadvisor.png": "/static/media/Tripadvisor.3c0dcce52fb1b0bb0a36.png",
+    "static/media/album-maker.PNG": "/static/media/album-maker.f99fa1fd899f15d1fe9e.PNG",
+    "static/media/healthkart.PNG": "/static/media/healthkart.a2d08ce5664af4cc5b19.PNG",
+    "static/media/meanbuy.PNG": "/static/media/meanbuy.4c8246b696996c1fe70b.PNG",
+    "static/media/Sanghamitra-Satpathy-Resume.pdf": "/static/media/Sanghamitra-Satpathy-Resume.8e16b1376e8b2a3beec8.pdf",
+    "static/media/portfoliolight.PNG": "/static/media/portfoliolight.8400d7a6975be5ef8aad.PNG",
+    "static/media/portfoliodark.PNG": "/static/media/portfoliodark.e73128dcdb6e5744d345.PNG",
+    "static/media/google-digital-garage.PNG": "/static/media/google-digital-garage.2c1e2235e3e00cf9de35.PNG",
+    "static/media/nordstorm.png": "/static/media/nordstorm.3ad099073a10642675e6.png",
+    "index.html": "/index.html",
+    "main.d0154a09.css.map": "/static/css/main.d0154a09.css.map",
+    "main.e02d4141.js.map": "/static/js/main.e02d4141.js.map",
+    "787.7da95b79.chunk.js.map": "/static/js/787.7da95b79.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d0154a09.css",
+    "static/js/main.e02d4141.js"
+  ]
+}
