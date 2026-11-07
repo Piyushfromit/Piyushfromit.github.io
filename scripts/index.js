@@ -1,174 +1,66 @@
-// just uncomment line no... 1 for active Massage section of Portfolio
+// Uncomment the line below to activate the contact form (Google Sheet)
 // const scriptURL ='https://script.google.com/macros/s/AKfycbwElebV2ONtMTMvS2DiiEJxyFom5W5hXLc0R-bCNx6vCM1EFCP5CL8hc9Bn75mZa5S8/exec'
+
+document.documentElement.classList.remove('no-js')
+
+const RESUME_URL =
+  'https://drive.usercontent.google.com/u/0/uc?id=1S1tICyFT3Ts_whWB7EhcZGt0d2GXaUsh&export=download'
+
+/* ---------------- Contact form ---------------- */
 const form = document.forms['submit-to-google-sheet']
 const msg = document.getElementById('msg')
+
+const showMsg = (text) => {
+  msg.textContent = text
+  setTimeout(() => (msg.textContent = ''), 5000)
+}
+
 form.addEventListener('submit', (e) => {
   e.preventDefault()
+
+  // If the Google Sheet script is not enabled, fall back to the user's mail app
+  if (typeof scriptURL === 'undefined') {
+    const data = new FormData(form)
+    const subject = encodeURIComponent(`Portfolio message from ${data.get('Name')}`)
+    const body = encodeURIComponent(`${data.get('Message')}\n\n${data.get('Name')} (${data.get('Email')})`)
+    window.location.href = `mailto:piyushfrommasai@gmail.com?subject=${subject}&body=${body}`
+    return
+  }
+
+  const button = form.querySelector('button[type="submit"]')
+  button.disabled = true
   fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-    .then((response) => {
-      msg.innerHTML = 'Message Sent Successfully'
-      setTimeout(() => {
-        msg.innerHTML = ''
-      }, 5000)
+    .then(() => {
+      showMsg('Message sent successfully. Thank you!')
       form.reset()
     })
-    .catch((error) => console.error('Error!', error.message))
-})
-
-let open = false
-
-function openmenu() {
-  let menu = document.getElementById('burger_items')
-
-  if (open) {
-    menu.style.display = 'none'
-    open = false
-  } else {
-    menu.style.display = 'block'
-    open = true
-  }
-}
-
-window.addEventListener('load', () => {
-  loadskills(skills)
-  loadprojects(projects)
-})
-
-let skills = [
-  {
-    src: './data/java.png',
-    name: 'Java',
-    type: 'backend',
-  },
-  {
-    src: './data/js.png',
-    name: 'JavaScript',
-    type: 'backend',
-  },
-  {
-    src: './data/springboot.png',
-    name: 'SpringBoot',
-    type: 'backend',
-  },
-  {
-    src: './data/hibernate.png',
-    name: 'Hibernate',
-    type: 'backend',
-  },
-  {
-    src: './data/sql.jpg',
-    name: 'SQL',
-    type: 'backend',
-  },
-  {
-    src: './data/aws.png',
-    name: 'AWS',
-    type: 'backend',
-  },
-  {
-    src: './data/html.png',
-    name: 'HTML',
-    type: 'frontend',
-  },
-  {
-    src: './data/css.png',
-    name: 'CSS',
-    type: 'frontend',
-  },
-  {
-    src: './data/github.png',
-    name: 'GitHUb',
-    type: 'all',
-  },
-  {
-    src: './data/netlify.png',
-    name: 'Netlify',
-    type: 'all',
-  },
-]
-
-var loadskills = (arr) => {
-  let skills_container = document.getElementById('skills-container')
-  skills_container.innerHTML = null
-  arr.forEach((ele) => {
-    const skill = document.createElement('div')
-
-    const logo = document.createElement('img')
-    logo.src = ele.src
-    const name = document.createElement('p')
-    name.innerText = ele.name
-
-    skill.append(logo, name)
-
-    skills_container.append(skill)
-  })
-}
-
-var loadprojects = (arr) => {
-  const projects_container = document.getElementById('projects-container')
-  projects_container.innerHTML = null
-
-  arr.forEach((ele) => {
-    const project = document.createElement('div')
-
-    const project_demo = document.createElement('div')
-    project_demo.setAttribute('class', 'project-demo')
-    const image = document.createElement('img')
-    image.src = ele.image
-    project_demo.append(image)
-
-    const project_info = document.createElement('div')
-    project_info.setAttribute('class', 'tac')
-
-    const name = document.createElement('h3')
-    name.innerText = ele.name
-
-    const desc = document.createElement('p')
-    desc.innerText = ele.desc
-
-    const techstack = document.createElement('b') 
-       
-    let bag = ''
-    ele.techstack.forEach((e) => {
-      bag += ' | ' + e
+    .catch((error) => {
+      console.error('Error!', error.message)
+      showMsg('Something went wrong. Please email me directly.')
     })
-    techstack.innerText = 'Tech Stack ' + bag
+    .finally(() => (button.disabled = false))
+})
 
-    const buttons = document.createElement('div')
-    buttons.setAttribute('class', 'btn_div')
-
-    const live = document.createElement('div')
-    live.setAttribute('class', 'btn')
-    const livelink = document.createElement('a')
-    livelink.href = ele.live
-    livelink.target = '_blank'
-    livelink.innerText = 'See Live'
-    live.append(livelink)
-
-    const github = document.createElement('div')
-    github.setAttribute('class', 'btn')
-    const githublink = document.createElement('a')
-    githublink.href = ele.github
-    githublink.target = '_blank'
-    githublink.innerText = 'View Code'
-    github.append(githublink)
-
-    buttons.append(live, github)
-
-    project_info.append(name, desc,techstack, buttons)
-
-    project.append(project_demo, project_info)
-
-    projects_container.append(project)
-  })
-}
+/* ---------------- Data ---------------- */
+let skills = [
+  { src: './data/java.png', name: 'Java', type: 'backend' },
+  { src: './data/springboot.png', name: 'Spring Boot', type: 'backend' },
+  { src: './data/hibernate.png', name: 'Hibernate', type: 'backend' },
+  { src: './data/sql.jpg', name: 'SQL', type: 'database' },
+  { src: './data/aws.png', name: 'AWS', type: 'cloud' },
+  { src: './data/js.png', name: 'JavaScript', type: 'language' },
+  { src: './data/html.png', name: 'HTML', type: 'frontend' },
+  { src: './data/css.png', name: 'CSS', type: 'frontend' },
+  { src: './data/github.png', name: 'GitHub', type: 'tools' },
+  { src: './data/netlify.png', name: 'Netlify', type: 'tools' },
+]
 
 let projects = [
   {
     image: './data/fooduswaggerhomepage.jpg',
     name: 'Online Food Delivery Application',
     desc:
-      "An end-to-end food delivery system. It handles user and restaurant authentication, create category, order, and bill.",
+      'An end-to-end food delivery system. It handles user and restaurant authentication, categories, orders and bills.',
     live: 'https://drive.google.com/file/d/1AY7rmxxM6qQD9Gr0sR4ojEzUgRdxFBVU/view?usp=share_link',
     github: 'https://github.com/PratyayChakraborty/holy-food-9262',
     techstack: ['SpringBoot', 'Mysql', 'Hibernate', 'Swagger-Ui'],
@@ -180,9 +72,9 @@ let projects = [
     image: './data/cricbuzz.png',
     name: 'Cricbuzz.com Website Clone',
     desc:
-      "Cricbuzz is built for Crecket News. That's why we design tools that allow you to structure and customize your recruitment into a collaborative process. More than 5,000 companies use our collaborative hiring software to share the work, speed up daily processes, and grow their teams together.",
-      live: 'https://piyushfromit.github.io/cricbuzzClone/',
-      github: 'https://github.com/Hilton-Borah/Cricbuzz-Clone',
+      'A clone of Cricbuzz, the cricket news website, showing live scores, match updates and the latest cricket news.',
+    live: 'https://piyushfromit.github.io/cricbuzzClone/',
+    github: 'https://github.com/Hilton-Borah/Cricbuzz-Clone',
     techstack: ['HTML', 'CSS', 'JavaScript', 'API'],
     group: 'true',
     solo: 'false',
@@ -192,7 +84,7 @@ let projects = [
     image: './data/myntra.png',
     name: 'Myntra Website Clone',
     desc:
-      'Ecommerce website for online shopping with Full functionality flow i.e SignUp, SighIn, Cart, Payment Checkout',
+      'E-commerce website for online shopping with a full functional flow: Sign Up, Sign In, Cart and Payment Checkout.',
     live: 'https://sumitraghavwork.github.io/mytro-di-myntra/',
     github: 'https://github.com/sumitraghavwork/mytro-di-myntra',
     techstack: ['HTML', 'CSS', 'JavaScript'],
@@ -204,8 +96,8 @@ let projects = [
     image: './data/lmsofmasai.png',
     name: 'Learning Management System',
     desc:
-      'Learning Management System Helps provide a single platform where Instructors and Students can Sign Up and Manage the Students lectures and assignments.',
-      live: 'https://piyushfromit.github.io/LMSofMasai/',
+      'A single platform where instructors and students can sign up and manage lectures and assignments.',
+    live: 'https://piyushfromit.github.io/LMSofMasai/',
     github: 'https://github.com/Piyushfromit/LMSofMasai',
     techstack: ['HTML', 'CSS', 'JavaScript'],
     group: 'false',
@@ -216,7 +108,7 @@ let projects = [
     image: './data/weather.png',
     name: 'Weather App',
     desc:
-      'Provides Weather Forecast of the city. Weather API is used to get the forecast for the current day. Google maps API is configured to get the geolocation data of the user and to provide the current location and weather information.',
+      "Shows the weather forecast for any city using a Weather API, and uses Google Maps geolocation to show the user's current location and weather.",
     live: 'https://piyushfromit.github.io/WeatherApp/',
     github: 'https://github.com/Piyushfromit/WeatherApp',
     techstack: ['HTML', 'CSS', 'JavaScript', 'API'],
@@ -228,7 +120,7 @@ let projects = [
     image: './data/starwars.png',
     name: 'StarWars Guide',
     desc:
-      ' Star wars is a fictional Series and this app gives description of various characters of series using API.',
+      'Star Wars is a fictional series, and this app describes its various characters using the SWAPI API.',
     live: 'https://piyushfromit.github.io/StarWarsCharacter/',
     github: 'https://github.com/Piyushfromit/StarWarsCharacter',
     techstack: ['HTML', 'CSS', 'JavaScript', 'API'],
@@ -237,3 +129,103 @@ let projects = [
     type: 'all',
   },
 ]
+
+/* ---------------- Helpers ---------------- */
+const el = (tag, className, text) => {
+  const node = document.createElement(tag)
+  if (className) node.className = className
+  if (text) node.textContent = text
+  return node
+}
+
+const linkBtn = (href, label, iconClass, className) => {
+  const a = el('a', `btn btn-sm ${className}`)
+  a.href = href
+  a.target = '_blank'
+  a.rel = 'noopener'
+  a.append(document.createTextNode(label + ' '))
+  a.append(el('i', iconClass))
+  return a
+}
+
+/* ---------------- Render ---------------- */
+const loadskills = (arr) => {
+  const container = document.getElementById('skills-container')
+  container.innerHTML = ''
+
+  arr.forEach((ele) => {
+    const card = el('div', 'skill-card')
+
+    const icon = el('div', 'skill-icon')
+    const img = el('img')
+    img.src = ele.src
+    img.alt = ''
+    img.loading = 'lazy'
+    icon.append(img)
+
+    const name = el('p', '', ele.name)
+    name.append(el('small', '', ele.type))
+
+    card.append(icon, name)
+    container.append(card)
+  })
+}
+
+const loadprojects = (arr) => {
+  const container = document.getElementById('projects-container')
+  container.innerHTML = ''
+
+  arr.forEach((ele) => {
+    const card = el('article', 'project-card reveal')
+
+    const media = el('div', 'project-media')
+    const img = el('img')
+    img.src = ele.image
+    img.alt = `${ele.name} screenshot`
+    img.loading = 'lazy'
+    media.append(img, el('span', 'project-tag', ele.solo === 'true' ? 'Solo project' : 'Team project'))
+
+    const body = el('div', 'project-body')
+    const tech = el('div', 'tech-list')
+    ele.techstack.forEach((t) => tech.append(el('span', 'pill', t)))
+
+    const buttons = el('div', 'btn_div')
+    buttons.append(
+      linkBtn(ele.live, 'Live demo', 'fa-solid fa-arrow-up-right-from-square', 'btn-primary'),
+      linkBtn(ele.github, 'Source code', 'fa-brands fa-github', 'btn-ghost')
+    )
+
+    body.append(el('h3', '', ele.name), el('p', '', ele.desc), tech, buttons)
+    card.append(media, body)
+    container.append(card)
+  })
+}
+
+/* ---------------- Reveal on scroll ---------------- */
+const initReveal = () => {
+  const items = document.querySelectorAll('.reveal')
+  if (!('IntersectionObserver' in window)) {
+    items.forEach((i) => i.classList.add('visible'))
+    return
+  }
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible')
+          io.unobserve(entry.target)
+        }
+      })
+    },
+    { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+  )
+  items.forEach((i) => io.observe(i))
+}
+
+// Render immediately (script is loaded at the end of <body>)
+loadskills(skills)
+loadprojects(projects)
+initReveal()
+
+const year = document.getElementById('year')
+if (year) year.textContent = 2023
