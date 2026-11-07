@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="#0ea5e9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Simple "API" network icon: server node connected to three clients -->
+  <rect x="22" y="4" width="20" height="14" rx="3" />
+  <rect x="4" y="46" width="16" height="14" rx="3" />
+  <rect x="24" y="46" width="16" height="14" rx="3" />
+  <rect x="44" y="46" width="16" height="14" rx="3" />
+  <path d="M32 18v14M12 46v-7h40v7M32 32v14" />
+</svg>

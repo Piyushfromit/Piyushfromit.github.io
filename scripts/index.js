@@ -51,7 +51,17 @@ let skills = [
   { src: './data/js.png', name: 'JavaScript', type: 'language' },
   { src: './data/html.png', name: 'HTML', type: 'frontend' },
   { src: './data/css.png', name: 'CSS', type: 'frontend' },
+  { src: './data/restapi.svg', name: 'REST API', type: 'backend' },
+  { src: './data/graphql.svg', name: 'GraphQL', type: 'backend' },
+  { src: './data/kafka.svg', name: 'Kafka', type: 'messaging' },
+  { src: './data/mongodb.svg', name: 'MongoDB', type: 'database' },
+  { src: './data/redis.svg', name: 'Redis', type: 'database' },
+  { src: './data/docker.svg', name: 'Docker', type: 'devops' },
+  { src: './data/kubernetes.svg', name: 'Kubernetes', type: 'devops' },
+  { src: './data/jenkins.svg', name: 'Jenkins', type: 'devops' },
+  { src: './data/git.svg', name: 'Git', type: 'tools' },
   { src: './data/github.png', name: 'GitHub', type: 'tools' },
+  { src: './data/postman.svg', name: 'Postman', type: 'tools' },
   { src: './data/netlify.png', name: 'Netlify', type: 'tools' },
 ]
 
@@ -157,11 +167,18 @@ const loadskills = (arr) => {
     const card = el('div', 'skill-card')
 
     const icon = el('div', 'skill-icon')
-    const img = el('img')
-    img.src = ele.src
-    img.alt = ''
-    img.loading = 'lazy'
-    icon.append(img)
+    if (ele.icon) {
+      // Font Awesome icon for skills without an official logo (e.g. REST API)
+      const i = el('i', ele.icon)
+      i.setAttribute('aria-hidden', 'true')
+      icon.append(i)
+    } else {
+      const img = el('img')
+      img.src = ele.src
+      img.alt = ''
+      img.loading = 'lazy'
+      icon.append(img)
+    }
 
     const name = el('p', '', ele.name)
     name.append(el('small', '', ele.type))

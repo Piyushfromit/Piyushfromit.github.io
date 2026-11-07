@@ -721,6 +721,10 @@ ul {
   height: 100%;
   object-fit: contain;
 }
+.skill-icon i {
+  font-size: 1.35rem;
+  color: var(--sky-500);
+}
 .skill-card p {
   font-weight: 700;
   font-size: 0.95rem;
@@ -1206,6 +1210,68 @@ ul {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
   }
+
+  /* Smaller hero photo so the intro text is visible on the first screen */
+  .hero {
+    padding-top: calc(var(--nav-h) + 28px);
+  }
+  .hero-inner {
+    gap: 28px;
+  }
+  .hero-visual {
+    width: 210px;
+  }
+  .photo-frame {
+    aspect-ratio: 1 / 1;
+    padding: 6px;
+    border-radius: 22px;
+  }
+  .photo-frame img {
+    border-radius: 17px;
+    object-position: center 20%;
+  }
+  .float-chip {
+    font-size: 0.72rem;
+    padding: 6px 10px;
+    border-radius: 10px;
+    gap: 6px;
+  }
+  .chip-1 {
+    top: 8%;
+    left: -22%;
+  }
+  .chip-2 {
+    bottom: 14%;
+    right: -24%;
+  }
+  .chip-3 {
+    bottom: -8%;
+    left: 10%;
+  }
+  .badge {
+    margin-bottom: 18px;
+  }
+  .typing-line {
+    margin: 14px 0 12px;
+  }
+  .hero-desc {
+    margin-bottom: 26px;
+  }
+
+  /* Compact mobile menu */
+  #burger_items {
+    padding: 8px 20px 16px;
+    gap: 0;
+  }
+  #burger_items > a:not(.btn) {
+    padding: 9px 12px;
+    font-size: 0.95rem;
+  }
+  #burger_items > .btn {
+    margin-top: 8px;
+    padding: 11px;
+    font-size: 0.88rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1219,15 +1285,18 @@ ul {
   .hero-btns .btn {
     width: 100%;
   }
+  .hero-visual {
+    width: 170px;
+  }
   .float-chip {
-    font-size: 0.75rem;
-    padding: 8px 12px;
+    font-size: 0.68rem;
+    padding: 5px 9px;
   }
   .chip-1 {
-    left: -6%;
+    left: -26%;
   }
   .chip-2 {
-    right: -6%;
+    right: -28%;
   }
   .skill-card {
     flex-direction: column;
